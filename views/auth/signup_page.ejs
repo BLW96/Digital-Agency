@@ -1,0 +1,56 @@
+<% layout('layouts/boilerplate')%>
+
+<section style="margin-top: 5em; padding: 30px; background-color: aliceblue">
+  <form novalidate class="validated-form form">
+    <div style="margin-top: 1em">
+      <label for="username">username</label>
+      <input type="text" name="username" placeholder="username" required />
+      <div class="username error" style="color: #ac0707"></div>
+    </div>
+    <div style="margin-top: 1em">
+      <label for="password">password</label>
+      <input type="password" name="password" placeholder="password" required />
+      <div class="password error" style="color: #ac0707"></div>
+    </div>
+
+    <button>submit</button>
+  </form>
+</section>
+
+<script>
+  const form = document.querySelector("form");
+  const usernameError = document.querySelector(".username.error");
+  const passwordError = document.querySelector(".password.error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    usernameError.textContent = "";
+    passwordError.textContent = "";
+
+    const username = form.username.value;
+    const password = form.password.value;
+
+    try {
+      const res = await fetch("/auth/signup", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      if (data.errors) {
+        usernameError.textContent = data.errors.username;
+        passwordError.textContent = data.errors.password;
+      }
+
+      if (data.user) {
+        location.assign("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>

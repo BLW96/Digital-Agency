@@ -1,0 +1,216 @@
+.projects-section.flex {
+  display: flex;
+}
+.model-header-component {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5.48em;
+  padding-bottom: 5em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.model-center-header-wrapper {
+  text-align: center;
+}
+
+.model-header-heading {
+  font-size: 4.8em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--dark);
+}
+
+.model-subheader {
+  margin-bottom: 1.2em;
+  font-size: 1.4em;
+  max-width: 22em;
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+/* model info section */
+.model-info-component {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.model-md-image-wrapper {
+  max-width: 40em;
+}
+
+.model-text-wrapper {
+  width: 42em;
+  box-sizing: border-box;
+}
+.model-info-heading {
+  font-size: 3.4em;
+  font-weight: 700;
+  color: var(--white);
+  opacity: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5em;
+}
+
+.model-info-subheading {
+  max-width: 34em;
+  line-height: 1.5;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--lightGray);
+}
+
+/* model-info */
+.digital-team-component {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.digital-team-wrapper {
+  padding: 2em 0;
+  margin: 2em 0;
+  border-top: 2px solid #cccccc30;
+  border-bottom: 2px solid #cccccc30;
+  cursor: grab;
+}
+.team-col-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.team-image-item {
+  max-width: 12em;
+  overflow: hidden;
+}
+.team-image-item img {
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+}
+
+.digital-team-wrapper .team-heading {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--lightGray);
+}
+
+.digital-team-component .iconify {
+  font-size: 4em;
+  color: var(--primary);
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0.8;
+}
+
+.model-info-Features {
+  line-height: 2;
+  margin-top: 1em;
+  font-size: 1.2em;
+  color: var(--lightGray);
+}
+
+.image {
+  background-color: transparent;
+  outline-color: transparent;
+  color: transparent;
+}
+
+.image {
+  border-radius: 15px;
+  background-color: transparent;
+  outline-color: transparent;
+  outline-offset: 0px;
+  outline-style: none;
+  outline-width: 0px;
+  color: transparent;
+}
+
+.multi-image-item {
+  width: 100%;
+  margin-bottom: 2.08em;
+}
+
+.project-image {
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  .model-info-component {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  .model-text-wrapper {
+    margin-bottom: 2em;
+  }
+}
+@media screen and (max-width: 479px) {
+  .model-header-heading {
+    font-size: 2.8em;
+  }
+  .model-subheader {
+    max-width: 100%;
+    font-size: 1.2em;
+  }
+  .model-info-component {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  .model-info-heading {
+    font-size: 2.4em;
+  }
+  .model-text-wrapper {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+  .model-info-subheading {
+    max-width: 100%;
+  }
+}

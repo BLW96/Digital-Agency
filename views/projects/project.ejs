@@ -1,0 +1,162 @@
+<% layout('layouts/boilerplate')%>
+
+<section class="projects-section flex">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="model-header-component">
+        <div class="model-center-header-wrapper">
+          <h1 class="model-header-heading"><%= project.projectName %></h1>
+          <div class="model-subheader"><%= project.title %></div>
+          <a
+            href="/<%= project.projectLink %>"
+            class="hero-btn white-bg w-inline-block"
+          >
+            <div>
+              Project link
+              <span
+                class="iconify"
+                data-icon="material-symbols:arrow-outward-rounded"
+              ></span>
+            </div>
+          </a>
+        </div>
+
+        <a href="#model-info" class="down-arrow">
+          <span
+            class="iconify"
+            data-icon="material-symbols:line-end-arrow-notch-rounded"
+          ></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="model-info-section" id="model-info">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="model-info-component">
+          <div class="model-md-image-wrapper lazyload">
+            <img
+              src="../../projects_images/<%= project._id %>/<%= project.image %>"
+              alt="img"
+              class="image"
+            />
+          </div>
+          <div class="model-text-wrapper lazyload">
+            <div class="model-info-heading"><%= project.projectName %></div>
+            <div class="model-info-subheading"><%= project.desc %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="model-info-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="digital-team-component">
+          <div class="styled-subheading-wrapper">
+            <div class="styled-subheading">
+              project was<br />
+              made by
+            </div>
+          </div>
+          <div class="digital-team-wrapper owl-carousel lazyload">
+            <div class="team-col-item">
+              <div class="team-image-item">
+                <img src="../../img/team-members.png" alt="img" />
+              </div>
+              <p class="team-heading">
+                delectus sint <br />
+                <b>magnam recusandae</b>
+              </p>
+            </div>
+            <div class="team-col-item">
+              <div class="team-image-item">
+                <img src="../../img/team-members.png" alt="img" />
+              </div>
+              <p class="team-heading">
+                delectus sint <br />
+                <b>magnam recusandae</b>
+              </p>
+            </div>
+            <div class="team-col-item">
+              <div class="team-image-item">
+                <img src="../../img/team-members.png" alt="img" />
+              </div>
+              <p class="team-heading">
+                delectus sint <br />
+                <b>magnam recusandae</b>
+              </p>
+            </div>
+            <div class="team-col-item">
+              <div class="team-image-item">
+                <img src="../../img/team-members.png" alt="img" />
+              </div>
+              <p class="team-heading">
+                delectus sint <br />
+                <b>magnam recusandae</b>
+              </p>
+            </div>
+          </div>
+
+          <span class="iconify" data-icon="mdi:chevron-left-right"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="model-info-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="digital-team-component">
+          <div class="styled-subheading-wrapper">
+            <div class="styled-subheading">
+              project<br />
+              mission
+            </div>
+          </div>
+          <div class="model-text-wrapper lazyload">
+            <div class="model-info-subheading">
+              <%= project.projectMission %>
+            </div>
+            <br />
+            <div class="model-info-Features">
+              <h3>Project Features:</h3>
+              <br />
+              <p><%= project.projectFeatures %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="multi-images">
+  <div class="page-padding">
+    <div class="container-large">
+      <div>
+        <div class="images-list">
+          <div class="list-items">
+            <% galleryImages.forEach(function(image){ %>
+            <div class="multi-image-item">
+              <img
+                class="project-image"
+                src="../../projects_images/<%= project._id %>/gallery/<%= image %>"
+                alt="img"
+              />
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

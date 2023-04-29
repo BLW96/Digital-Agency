@@ -1,0 +1,141 @@
+<% layout('layouts/adminBoilerplate') %>
+
+<h1 class="text-center">New Projects</h1>
+<a href="/admin/projects" class="btn btn-dark">&#171; Back to all projects</a>
+<br />
+<br />
+
+<form
+  action="/admin/projects/add-project"
+  method="POST"
+  novalidate
+  class="validated-form"
+  enctype="multipart/form-data"
+>
+  <div class="row">
+    <div class="col-8 offset-1">
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="projectName" class="form-label me-2">projectName</label>
+          <input
+            type="text"
+            class="form-control"
+            name="projectName"
+            placeholder="projectName"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="title" class="form-label me-2">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="Title"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="desc" class="form-label me-2">Description</label>
+          <textarea
+            type="text"
+            class="form-control"
+            name="desc"
+            row="10"
+            cols="30"
+            placeholder="Description"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="projectMission" class="form-label me-2"
+            >Project Mission Pargraph</label
+          >
+          <textarea
+            type="text"
+            class="form-control"
+            name="projectMission"
+            row="10"
+            cols="30"
+            placeholder="Project mission"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="projectFeatures" class="form-label me-2"
+            >Project Features Pargraphs</label
+          >
+          <textarea
+            type="text"
+            class="form-control"
+            name="projectFeatures"
+            row="10"
+            cols="30"
+            placeholder="Project features"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="projectLink" class="form-label me-2">Project Link</label>
+          <input
+            type="text"
+            class="form-control"
+            name="projectLink"
+            placeholder="Project Link"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="category" class="form-label me-2">Category</label>
+          <select name="category">
+            <% categories.forEach(function(cat) { %>
+            <option value="<%= cat.slug %>"><%= cat.title %></option>
+            <% }) %>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="input-group">
+          <label for="image" class="form-label me-2">Image</label>
+          <input type="file" class="form-control" name="image" id="img" />
+        </div>
+        <img src="#" id="imgPreview" alt="" class="mt-3" />
+      </div>
+      <button class="btn btn-success mt-2">ADD PROJECT</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        $("#imgPreview").attr("src", e.target.result).width(100).height(100);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#img").change(function () {
+    readURL(this);
+  });
+</script>

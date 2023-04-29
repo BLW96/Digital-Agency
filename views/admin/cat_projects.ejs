@@ -1,0 +1,86 @@
+<% layout('layouts/adminBoilerplate') %>
+
+<br />
+<h1 class="page-title text-center">All Projects</h1>
+<div class="row">
+  <div class="col-2">
+    <a href="/admin/projects/add-project" class="btn btn-secondary"
+      >Add new project</a
+    >
+  </div>
+  <div class="col-2">
+    <div class="dropdown">
+      <button
+        class="btn btn-outline-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Categories
+      </button>
+      <ul class="dropdown-menu">
+        <% categories.forEach(function(c) {%>
+        <li>
+          <a class="dropdown-item" href="/admin/projects/<%= c.slug %>">
+            <%= c.title%>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+
+<table class="table table-striped">
+  <thead>
+    <tr class="home">
+      <th>Image</th>
+      <th>ProjectName</th>
+      <th>Category</th>
+      <th>Date</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for( let project of projects ) { %>
+    <tr>
+      <td>
+        <% if (project.image==="" || project.image===null) { %>
+        <img src="/img/Background.png" class="img-thumbnail" alt="" />
+        <% } else { %>
+        <img
+          src="/projects_images/<%= project.id %>/<%= project.image %>"
+          class="img-thumbnail"
+          width="80"
+          alt=""
+        />
+        <% } %>
+      </td>
+
+      <td><%= project.projectName %></td>
+      <td><%= project.category %></td>
+      <td><%= project.createdAt.toLocaleDateString() %></td>
+
+      <td>
+        <a
+          href="/admin/projects/edit-project/<%= project.id %> "
+          class="btn btn-primary"
+          >Edit</a
+        >
+      </td>
+      <td>
+        <a
+          href="/admin/projects/delete-project/<%= project.id %> "
+          class="confirmDeletion btn btn-danger"
+          >Delete</a
+        >
+      </td>
+    </tr>
+
+    <% } %>
+  </tbody>
+</table>

@@ -1,0 +1,404 @@
+<% layout('layouts/boilerplate')%>
+
+<section class="hero-section" id="hero-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="hero-header-component">
+        <div class="hero-header-top-wrapper">
+          <h1 class="hero-header-heading">
+            Empower<br />
+            your grouth
+          </h1>
+          <div class="hero-header-subheading">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur porro labore debitis non id qui suscipit nemo? Hic
+              facere, sint dolore aut sapiente
+            </p>
+            <a href="#" class="hero-btn white-bg w-inline-block">
+              <div>
+                Start project
+                <span
+                  class="iconify"
+                  data-icon="material-symbols:arrow-outward-rounded"
+                ></span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="hero-bottom-wrapper">
+          <div class="hero-services-container">
+            <div class="service-bx-wrapper">
+              <span
+                class="iconify"
+                data-icon="icon-park-outline:market-analysis"
+              ></span>
+
+              <p>Lorem ipsum dolor</p>
+              <strong>Lorem ipsum dolor</strong>
+            </div>
+
+            <div class="service-bx-wrapper">
+              <span class="iconify" data-icon="bi:window-stack"></span>
+              <p>sunt adipisci debitis</p>
+              <strong>Lorem ipsum dolor</strong>
+            </div>
+
+            <div class="service-bx-wrapper">
+              <span
+                class="iconify"
+                data-icon="fluent:arrow-trending-lines-20-regular"
+              ></span>
+              <p>obcaecati rem</p>
+              <strong>Lorem ipsum dolor</strong>
+            </div>
+
+            <div class="service-bx-wrapper">
+              <span
+                class="iconify"
+                data-icon="material-symbols:share-outline"
+              ></span>
+              <p>suscipit optio quis</p>
+              <strong>Lorem ipsum dolor</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- about section -->
+<section class="about-section" id="about-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="home-about-component">
+          <div class="home-about-text-wrapper lazyload">
+            <div class="process-bx">
+              <span
+                class="iconify"
+                data-icon="icon-park-solid:plus-cross"
+                style="color: #86f5ab"
+              ></span>
+              <div class="big-number">00<%= projectCount %></div>
+              <p>Seccessful projects</p>
+            </div>
+            <div class="process-bx">
+              <span
+                class="iconify"
+                data-icon="icon-park-solid:plus-cross"
+                style="color: #f1d984"
+              ></span>
+              <div class="big-number">022</div>
+              <p>Super happer client</p>
+            </div>
+
+            <div class="process-bx">
+              <span
+                class="iconify"
+                data-icon="icon-park-solid:plus-cross"
+                style="color: #bf1b3e"
+              ></span>
+              <div class="big-number">031</div>
+              <p>Awards winners</p>
+            </div>
+          </div>
+
+          <div class="home-about-middle-wrapper">
+            <div class="styled-subheading-wrapper">
+              <div class="styled-subheading">
+                What we <br />
+                deliver
+              </div>
+            </div>
+            <span class="iconify" data-icon="simple-icons:starship"></span>
+          </div>
+
+          <div class="home-about-bottom-wrapper lazyload">
+            <div class="text-bx">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
+                ut obcaecati nostrum, natus fugit cum assumenda
+              </p>
+            </div>
+            <div class="text-bx">
+              <p>
+                Lorem ipsum dolor sit amet adipisicing elit. Neque ut obcaecati
+                nostrum, natus fugit cum assumenda natus
+              </p>
+            </div>
+
+            <div class="text-bx">
+              <p>
+                dolor sit amet consectetur, adipisicing elit. Neque ut obcaecati
+                nostrum, natus fugit cum assumenda minima
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end about section -->
+<!-- projects section -->
+
+<section class="home-projects-section" id="home-projects-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="home-projects-component">
+          <div class="home-projects-text-wrapper lazyload">
+            <div class="styled-subheading-wrapper">
+              <div class="styled-subheading">
+                Selected <br />
+                work
+              </div>
+            </div>
+            <p class="styled-heading">
+              Ladipisicing elit. Architecto suscipit facere officia aliquid
+              tenetur laboriosam, modi consequuntur! Deserunt, corporis
+              molestiae. sed optio mollitia esse possimus
+            </p>
+            <a href="/projects" class="hero-btn white-bg w-inline-block">
+              <div>
+                all projects
+                <span
+                  class="iconify"
+                  data-icon="material-symbols:arrow-outward-rounded"
+                ></span>
+              </div>
+            </a>
+          </div>
+
+          <div class="home-projects-container">
+            <% for(let i = 0; i < featuredProjects.length; i++) { %> <% const
+            project = featuredProjects[i]; %> <% if(i === 0) { %>
+            <div class="double-column-item lazyload">
+              <a
+                href="/projects/<%= project.slug %>"
+                class="col-item"
+                style="
+                  background-image: url('../../projects_images/<%=project.id%>/<%=project.image%>');
+                "
+              >
+                <div class="home-project-bottom-wrapper">
+                  <div class="col-item-num">01</div>
+                  <span
+                    class="iconify"
+                    data-icon="svg-spinners:gooey-balls-2"
+                  ></span>
+                </div>
+              </a>
+            </div>
+
+            <% } else { %> <% if(i === 1) { %>
+            <div class="single-column-item lazyload">
+              <a
+                href="/projects/<%= project.slug %>"
+                class="col-item"
+                style="
+                  background-image: url('../../projects_images/<%=project.id%>/<%=project.image%>');
+                "
+              >
+                <div class="home-project-bottom-wrapper">
+                  <div class="col-item-num">02</div>
+                  <span
+                    class="iconify"
+                    data-icon="svg-spinners:gooey-balls-2"
+                  ></span></div
+              ></a>
+            </div>
+
+            <% } %> <%if(i === 2) { %>
+            <div class="single-column-item last lazyload">
+              <a
+                href="/projects/<%= project.slug %>"
+                class="col-item"
+                style="
+                  background-image: url('../../projects_images/<%=project.id%>/<%=project.image%>');
+                "
+                ><div class="home-project-bottom-wrapper">
+                  <div class="col-item-num">03</div>
+                  <span
+                    class="iconify"
+                    data-icon="svg-spinners:gooey-balls-2"
+                  ></span></div
+              ></a>
+            </div>
+
+            <% } %> <% }%> <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end projects section -->
+
+<!-- Team section -->
+<section class="team-section" id="team-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="home-team-component">
+          <div class="home-team-wrapper">
+            <div class="home-team-profile-wrapper lazyload">
+              <div class="team-member-wrapper">
+                <div class="img-bx"></div>
+
+                <div class="team-text">
+                  mollitia esse <br />
+                  <strong>modi Deserunt</strong>
+                </div>
+              </div>
+              <div class="team-member-wrapper">
+                <div class="img-bx"></div>
+                <div class="team-text">
+                  Architecto suscipit <br />
+                  <strong>tenetur laboriosam</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="home-team-text-wrapper lazyload">
+              <div class="styled-subheading-wrapper">
+                <div class="styled-subheading">
+                  Meet the<br />
+                  team
+                </div>
+              </div>
+              <p class="styled-heading">
+                Ladipisicing elit. Architecto suscipit facere officia aliquid
+                tenetur laboriosam, modi consequuntur! Deserunt, corporis
+                molestiae. sed optio mollitia esse possimus
+              </p>
+              <a href="#" class="hero-btn white-bg w-inline-block">
+                <div>
+                  all digital team
+                  <span
+                    class="iconify"
+                    data-icon="material-symbols:arrow-outward-rounded"
+                  ></span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="home-team-bottom-wrapper lazyload">
+            <div class="home-about-bottom-wrapper">
+              <div class="team-subheading">
+                Happy<br />
+                client
+              </div>
+              <span
+                class="iconify"
+                data-icon="arcticons:bejeweled-blitz"
+              ></span>
+
+              <div class="text-bx">
+                <p>
+                  dolor sit amet consectetur, adipisicing elit. Neque ut
+                  obcaecati nostrum, natus fugit cum assumenda minima
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end Team section -->
+
+<!-- Contact section -->
+<section class="contact-section" id="contact-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="contact-padding-vertical padding-custom">
+        <div class="home-contact-component">
+          <div class="home-team-text-wrapper">
+            <div class="styled-subheading-wrapper">
+              <div class="styled-subheading" id="text-dark">
+                keep in<br />
+                touch
+              </div>
+            </div>
+            <a href="/" class="nav-brand-link w-inline-block">
+              <img
+                src="../../img/digital-agency-logo.png"
+                alt="logo"
+                class="nav-brand-logo"
+              />
+            </a>
+            <p class="styled-heading" id="text-dark">
+              Do you have any questions?
+            </p>
+            <div class="contact-text-wrapper">
+              <span class="iconify" data-icon="typcn:messages"></span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            </div>
+            <a href="#" class="hero-btn white-bg w-inline-block">
+              <div>
+                start now
+                <span
+                  class="iconify"
+                  data-icon="material-symbols:arrow-outward-rounded"
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div class="home-contact-info-wrapper lazyload">
+            <div class="contact-list-items">
+              <a href="mailto:#" target="_blank" class="contact-col-item">
+                <div class="item-heading">email</div>
+                <div class="item-subheading">
+                  info@Business.org
+                  <span
+                    class="iconify"
+                    data-icon="material-symbols:arrow-outward-rounded"
+                  ></span>
+                </div>
+              </a>
+              <a href="#" target="_blank" class="contact-col-item">
+                <div class="item-heading">instagram</div>
+                <div class="item-subheading">
+                  @Business
+                  <span
+                    class="iconify"
+                    data-icon="material-symbols:arrow-outward-rounded"
+                  ></span>
+                </div>
+              </a>
+              <a href="#" class="contact-col-item">
+                <div class="item-heading">telegram</div>
+                <div class="item-subheading">
+                  @Business
+                  <span
+                    class="iconify"
+                    data-icon="material-symbols:arrow-outward-rounded"
+                  ></span>
+                </div>
+              </a>
+              <a href="#" class="contact-col-item">
+                <div class="item-heading">whatsapp</div>
+                <div class="item-subheading">
+                  @Business
+                  <span
+                    class="iconify"
+                    data-icon="material-symbols:arrow-outward-rounded"
+                  ></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end Contact section -->

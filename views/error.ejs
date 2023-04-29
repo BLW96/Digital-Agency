@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate')%>
+<div class="error-container">
+  <div>
+    <div role="alert" class="error-alert-wrapper">
+      <% if(user) { %>
+      <h4><%=err.message%></h4>
+      <h4><%=err.stack%></h4>
+      <% } else { %>
+      <h1 style="margin-bottom: 20px; color: #b11638">
+        <b>404 </b><%=err.message%>
+      </h1>
+      <h5 style="color: #0e0e10; max-width: 600px">
+        "We're sorry, the page you're looking for cannot be found. This may be
+        because the page has been moved, deleted, or the URL was mistyped.
+        Please check the URL and try again.
+      </h5>
+      <% } %>
+    </div>
+  </div>
+</div>

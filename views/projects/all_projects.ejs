@@ -1,0 +1,72 @@
+<% layout('layouts/boilerplate')%>
+<section class="projects-section">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="projects-header-component">
+        <div class="projects-top-header-wrapper">
+          <h1 class="projects-header-heading">
+            Projects that<br />we proud of
+          </h1>
+          <p>
+            Tempora possimus nesciunt ipsa sed tempore delectus laboriosam
+            distinctio repellat similique sunt neque
+          </p>
+        </div>
+
+        <div class="projects-bottom-header-wrapper">
+          <p>Sort:</p>
+          <div class="category-projects-sort">
+            <% for (let cat of categories){%>
+            <a
+              href="/projects?category=<%= cat.slug %>"
+              class="category-select-item"
+              id="category-select-item"
+            >
+              <div class="category-list-item" id="category-list-item">
+                <div><b># </b><%= cat.title %></div>
+              </div>
+            </a>
+            <% } %>
+          </div>
+        </div>
+
+        <a href="#projects-showcase" class="down-arrow">
+          <span
+            class="iconify"
+            data-icon="material-symbols:line-end-arrow-notch-rounded"
+          ></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="projects-showcase" id="projects-showcase">
+  <div class="page-padding">
+    <div class="container-large">
+      <div class="padding-vertical padding-custom">
+        <div class="projects-grid-wrapper">
+          <div class="projects-list" id="project-list">
+            <% for(let project of projects) { %>
+            <div class="list-item">
+              <a
+                href="/projects/<%= project.slug %>"
+                class="col-item-wrapper"
+                style="
+                  background-image: url('../../projects_images/<%=project.id%>/<%=project.image%>');
+                "
+              >
+                <div class="project-icon-wrapper">
+                  <span
+                    class="iconify"
+                    data-icon="material-symbols:line-end-arrow-notch-rounded"
+                  ></span>
+                </div>
+              </a>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --black: #000;
+  --dark: #0e0e10;
+  --white: #f9f9f9;
+  --lightGray: #d9d9d9;
+  --gray: #cecece;
+  --primary: #bb1133;
+  --mainTransition: 300ms linear;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-size: 1vw;
+  line-height: 1.4;
+  background-color: var(--dark);
+  font-family: "Open Sans", sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+p {
+  margin-bottom: 0px;
+  margin-top: 0;
+  font-size: 1em;
+}
+
+img {
+  border-color: initial;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+img {
+  border: 0;
+}
+
+div {
+  display: block;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.overflow-y {
+  overflow-y: hidden;
+}
+
+#text-dark {
+  color: #1e1e20;
+}
+.lazyload {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.error-container {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 20px;
+  background-color: var(--gray);
+  padding: 0 4em;
+}
+.error-alert-wrapper {
+  padding: 7em 0;
+}
+/* Margin Custom */
+
+.margin-top {
+  margin-right: 0rem;
+  margin-bottom: 0rem;
+  margin-left: 0rem;
+}
+
+/* Padding Custom */
+.page-padding {
+  padding-right: 4.69em;
+  padding-left: 4.69em;
+}
+
+.padding-vertical.padding-custom {
+  margin-bottom: 50px;
+  padding-top: 6.5em;
+  padding-bottom: 4em;
+}
+
+.padding-vertical {
+  padding-right: 0rem;
+  padding-left: 0rem;
+}
+
+.contact-padding-vertical.padding-custom {
+  padding-top: 2.48em;
+  padding-bottom: 2.05em;
+}
+
+.contact-padding-vertical {
+  padding-right: 0rem;
+  padding-left: 0rem;
+}
+
+/* {Padding , Margin} Custom Media */
+
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 14px;
+  }
+
+  .page-padding {
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+
+  .padding-vertical {
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page-padding {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+
+  .padding-vertical.padding-custom {
+    padding-top: 5.21em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .page-padding {
+    padding-right: 0.78em;
+    padding-left: 0.78em;
+  }
+}
